@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI Calculator</title>
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'calculator/css/styles.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'calculator/js/scripts.js' %}"></script>
+</head>
+<body class="bg-light">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card shadow-lg border-0 rounded-lg">
+                    <div class="card-header bg-dark text-white text-center py-4">
+                        <h2 class="fw-bold mb-0">EMI Calculator</h2>
+                    </div>
+                    <div class="card-body p-4">
+                        <form id="emiForm">
+                            <div class="mb-3">
+                                <label for="principal" class="form-label">Principal Amount</label>
+                                <input type="number" class="form-control" id="principal" name="principal" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="rate" class="form-label">Annual Interest Rate (%)</label>
+                                <input type="number" class="form-control" id="rate" name="rate" step="0.01" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="time" class="form-label">Time Period (months)</label>
+                                <input type="number" class="form-control" id="time" name="time" required>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-success btn-lg">Calculate EMI</button>
+                            </div>
+                        </form>
+                        <div id="result" class="mt-4 alert alert-info" style="display: none;"></div>
+                    </div>
+                </div>
+                <footer class="text-center mt-4 text-muted">
+                    <p>Developed by Ayush Manish Pillay (1JT21CS023)&copy; 2024</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
